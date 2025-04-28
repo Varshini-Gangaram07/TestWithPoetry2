@@ -61,7 +61,7 @@ fun AuthorDetailsScreen(
                                     val poems = result.data
                                     if (!poems.isNullOrEmpty()) {
                                         selectedPoemTitle.value = title
-                                        selectedPoem.value = result.data?.firstOrNull().lines?.joinToString("\n") ?: ""
+                                        selectedPoem.value = poems[0].lines?.joinToString("\n") ?: ""
                                         showDialog.value = true
                                     }  else {
                                         snackbarHostState.showSnackbar("Failed to load Poem: $title")

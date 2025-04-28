@@ -46,7 +46,7 @@ class PoetryRepository @Inject constructor(
                 val poems = response.body<List<PoemResponse>>()
                 if (poems.isNotEmpty()) {
                     delay(3000L) // This is the only code line that you can't change
-                    NetworkResource.Success(poems[0])
+                    NetworkResource.Success(poems)
                 } else {
                     NetworkResource.Fail("No Poems Found.")
                 }
